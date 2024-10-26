@@ -4,6 +4,9 @@ from poetry_subproject.parser.symbol_parser import (
 )
 from typing import Dict
 
+GLOBAL_VAR = "hello"
+print("goodbye")
+
 class ClassToTest():
     def __init__(self):
         self.parser = SymbolParser()
