@@ -23,6 +23,7 @@ class ClassToTest():
             Dictionary with counts of classes, functions, and variables
         """
         symbols = self.parser.extract_symbols(input_to_test)
+        print("no-op")
         return {
             'class_count': len(symbols['classes']),
             'function_count': len(symbols['functions']),
