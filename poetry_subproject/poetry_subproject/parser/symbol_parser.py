@@ -21,6 +21,7 @@ class SymbolParser:
             'classes': [],
             'variables': []
         }
+        print("Another no-op")
         
         def get_node_text(node):
             start_byte = node.start_byte
