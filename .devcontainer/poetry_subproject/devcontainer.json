@@ -1,7 +1,11 @@
 
 {
     "name": "poetry_subproject",
-    "image": "us-west1-docker.pkg.dev/sudocode-389022/environments/gym-notebook:latest",
+
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "../.."
+    },
 
     "containerEnv": {
         "HOME": "/workspace"
