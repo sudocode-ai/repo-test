@@ -1,0 +1,9 @@
+{
+    "argv": [
+        "/bin/bash",
+        "-c",
+        "source /home/jovyan/default/bin/activate && exec python -m ipykernel_launcher -f {connection_file}"
+    ],
+    "display_name": "default python",
+    "language": "python"
+}

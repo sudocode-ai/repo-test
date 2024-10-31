@@ -13,15 +13,6 @@ class ClassToTest():
         self.parser = SymbolParser()
         
     def count_symbols(self, input_to_test: str) -> Dict[str, int]:
-        """
-        Count the number of each type of symbol in the input code.
-        
-        Args:
-            input_to_test: String containing Python code
-            
-        Returns:
-            Dictionary with counts of classes, functions, and variables
-        """
         symbols = self.parser.extract_symbols(input_to_test)
         return {
             'class_count': len(symbols['classes']),
