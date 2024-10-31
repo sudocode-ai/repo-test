@@ -48,8 +48,6 @@ RUN conda install -c conda-forge nb_conda_kernels && \
     conda run -n JUPYTER_ENV python -m ipykernel install --user --name default --display-name "default" && \
     conda clean -afy
 
-COPY default_kernel.json /home/jovyan/.local/share/jupyter/kernels/default/kernel.json
-
 WORKDIR /workspace
 
 ENTRYPOINT ["/bin/bash", "-c"]
