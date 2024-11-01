@@ -7,8 +7,9 @@
     },
 
     "containerEnv": {
-        "HOME": "/workspace"
+        "WORKSPACE_FOLDER": "/home/jovyan"
     },
+    "workspaceFolder": "/home/jovyan",
 
     "customizations": {
         "kernels": [
