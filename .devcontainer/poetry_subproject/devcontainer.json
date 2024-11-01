@@ -6,10 +6,6 @@
         "context": "../.."
     },
 
-    "containerEnv": {
-        "WORKSPACE_FOLDER": "/home/jovyan"
-    },
-    "workspaceFolder": "/home/jovyan",
 
     "customizations": {
         "kernels": [
