@@ -50,10 +50,7 @@ ENV POETRY_HOME="/home/jovyan/.poetry" \
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
-# Configure Poetry defaults globally
-RUN pip install poetry && \
-    poetry config virtualenvs.in-project true --local && \
-    poetry config virtualenvs.create false --local
+RUN pip install poetry 
 
 # Set up the environment variables
 ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
