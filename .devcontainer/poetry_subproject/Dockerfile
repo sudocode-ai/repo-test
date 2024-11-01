@@ -29,6 +29,17 @@ RUN apt-get update && apt-get install -y \
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
+# Install Poetry globally
+ENV POETRY_HOME="/opt/poetry" \
+    POETRY_VERSION=1.7.1
+RUN curl -sSL https://install.python-poetry.org | python3 - && \
+    ln -s /opt/poetry/bin/poetry /usr/local/bin/poetry && \
+    chmod +x /usr/local/bin/poetry
+
+# Configure Poetry defaults globally
+RUN poetry config virtualenvs.in-project true --local && \
+    poetry config installer.max-workers 10
+    
 # Example: Allow jovyan to run specific commands without a password
 # Here, you would replace '/path/to/command' with the actual command path
 # For a more general approach (not recommended for security reasons), you could use:
@@ -39,13 +50,9 @@ RUN echo 'jovyan ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 USER jovyan
 
-# Set up the environment variables properly
+# Set up the environment variables
 ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
-ENV POETRY_VIRTUALENVS_CREATE=false
-ENV POETRY_HOME="/home/jovyan/.poetry"
-ENV PATH="$POETRY_HOME/bin:$PATH"
-
-ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
+ENV PATH="/opt/poetry/bin:${PATH}"
 
 RUN conda install -c conda-forge nb_conda_kernels && \
     conda init --all && \
