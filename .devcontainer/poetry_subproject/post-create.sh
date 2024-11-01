@@ -1,6 +1,6 @@
 #!/bin/bash
-# .devcontainer/setup.sh
 
+conda deactivate || true  # The || true ensures the script continues even if conda isn't active
 python -m venv /home/jovyan/poetry_subproject
 source /home/jovyan/poetry_subproject/bin/activate
 cd poetry_subproject
