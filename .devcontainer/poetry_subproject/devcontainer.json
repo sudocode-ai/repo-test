@@ -15,12 +15,12 @@
             {
                 "env_name": "poetry_subproject",
                 "container_path": "/home/jovyan/.local/share/jupyter/kernels/poetry_subproject/kernel.json",
-                "local_path": ".devcontainer/kernel.json"
+                "local_path": ".devcontainer/poetry_subproject/kernel.json"
             }
         ]
     },
 
-    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "postCreateCommand": "bash .devcontainer/poetry_subproject/post-create.sh",
 
     "remoteUser": "jovyan"
 }
