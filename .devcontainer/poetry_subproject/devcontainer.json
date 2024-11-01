@@ -17,7 +17,7 @@
         ]
     },
 
-    "postCreateCommand": "bash .devcontainer/poetry_subproject/post-create.sh",
+    "postCreateCommand": "bash post-create.sh",
 
     "remoteUser": "jovyan"
 }
