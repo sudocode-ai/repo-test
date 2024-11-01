@@ -39,6 +39,12 @@ RUN echo 'jovyan ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 USER jovyan
 
+# Set up the environment variables properly
+ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
+ENV POETRY_VIRTUALENVS_CREATE=false
+ENV POETRY_HOME="/home/jovyan/.poetry"
+ENV PATH="$POETRY_HOME/bin:$PATH"
+
 ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
 
 RUN conda install -c conda-forge nb_conda_kernels && \
