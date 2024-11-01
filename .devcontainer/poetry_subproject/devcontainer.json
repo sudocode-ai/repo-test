@@ -17,8 +17,7 @@
         ]
     },
 
-    "postCreateCommand": "/bin/bash -c 'pwd && ls -la && bash post-create.sh'",
-
+    "postCreateCommand": "bash .devcontainer/poetry_subproject/post-create.sh",
 
     "remoteUser": "jovyan"
 }
