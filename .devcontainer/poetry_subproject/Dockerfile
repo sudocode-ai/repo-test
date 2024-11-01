@@ -41,6 +41,10 @@ USER jovyan
 
 ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
 
+RUN conda install -c conda-forge nb_conda_kernels && \
+    conda init --all && \
+    conda clean -afy
+
 WORKDIR /workspace
 
 ENTRYPOINT ["/bin/bash", "-c"]
