@@ -38,6 +38,7 @@ RUN curl -sSL https://install.python-poetry.org | python3 - && \
 
 # Configure Poetry defaults globally
 RUN poetry config virtualenvs.in-project true --local && \
+    poetry config virtualenvs.create false --local && \
     poetry config installer.max-workers 10
     
 # Example: Allow jovyan to run specific commands without a password
@@ -54,9 +55,9 @@ USER jovyan
 ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
 ENV PATH="/opt/poetry/bin:${PATH}"
 
-RUN conda install -c conda-forge nb_conda_kernels && \
-    conda init --all && \
-    conda clean -afy
+RUN conda --no-plugins  install -c conda-forge nb_conda_kernels && \
+    conda --no-plugins  init --all && \
+    conda --no-plugins  clean -afy
 
 WORKDIR /workspace
 
