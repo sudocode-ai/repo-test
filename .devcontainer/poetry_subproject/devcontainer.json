@@ -17,7 +17,12 @@
         ]
     },
 
-    "postCreateCommand": "bash post-create.sh",
+    "postCreateCommand": [
+        "echo 'Current directory:' && pwd",
+        "echo 'Directory contents:' && ls -la",
+        "echo 'Parent directory contents:' && ls -la ..",
+        "bash post-create.sh"
+    ],
 
     "remoteUser": "jovyan"
 }
