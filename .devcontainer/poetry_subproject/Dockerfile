@@ -43,9 +43,6 @@ ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
 
 RUN conda install -c conda-forge nb_conda_kernels && \
     conda init --all && \
-    conda create -n JUPYTER_ENV python=3.11 jupyter && \
-    conda run -n JUPYTER_ENV pip install hatch && \
-    conda run -n JUPYTER_ENV python -m ipykernel install --user --name default --display-name "default" && \
     conda clean -afy
 
 WORKDIR /workspace

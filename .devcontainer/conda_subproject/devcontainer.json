@@ -1,10 +1,8 @@
+TODO (fill out and test the rest)
 {
     "name": "poetry_subproject",
+    "image": "us-west1-docker.pkg.dev/sudocode-389022/environments/gym-notebook:latest",
 
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": "../.."
-    },
 
     "containerEnv": {
         "HOME": "/workspace"
@@ -13,8 +11,8 @@
     "customizations": {
         "kernels": [
             {
-                "env_name": "poetry_subproject",
-                "container_path": "/home/jovyan/.local/share/jupyter/kernels/poetry_subproject/kernel.json",
+                "env_name": "default",
+                "remote_path": "/home/jovyan/.local/share/jupyter/kernels/default/kernel.json",
                 "local_path": ".devcontainer/kernel.json"
             }
         ]
