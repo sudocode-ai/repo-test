@@ -37,8 +37,6 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # This line is just an example; tailor it to your specific needs
 RUN echo 'jovyan ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-USER jovyan
-
 RUN conda install -c conda-forge nb_conda_kernels && \
     conda init --all && \
     conda clean -afy
@@ -54,6 +52,8 @@ RUN curl -sSL https://install.python-poetry.org | python3 - && \
 RUN poetry config virtualenvs.in-project true --local && \
     poetry config virtualenvs.create false --local && \
     poetry config installer.max-workers 10
+
+USER jovyan
 
 # Set up the environment variables
 ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
