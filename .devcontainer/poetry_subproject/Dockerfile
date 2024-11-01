@@ -41,23 +41,24 @@ RUN conda install -c conda-forge nb_conda_kernels && \
     conda init --all && \
     conda clean -afy
 
-# Install Poetry globally
-ENV POETRY_HOME="/opt/poetry" \
-    POETRY_VERSION=1.7.1
-RUN curl -sSL https://install.python-poetry.org | python3 - && \
-    ln -s /opt/poetry/bin/poetry /usr/local/bin/poetry && \
-    chmod +x /usr/local/bin/poetry
+USER jovyan
+
+# Install Poetry as jovyan user
+ENV POETRY_HOME="/home/jovyan/.poetry" \
+    POETRY_VERSION=1.7.1 \
+    POETRY_VIRTUALENVS_CREATE=false
+
+RUN curl -sSL https://install.python-poetry.org | python3 -
+
+ENV PATH="/home/jovyan/.poetry/bin:${PATH}"
 
 # Configure Poetry defaults globally
 RUN poetry config virtualenvs.in-project true --local && \
-    poetry config virtualenvs.create false --local && \
-    poetry config installer.max-workers 10
-
-USER jovyan
+    poetry config virtualenvs.create false --local
 
 # Set up the environment variables
 ENV PATH="/home/jovyan/.cargo/bin:${PATH}"
-ENV PATH="/opt/poetry/bin:${PATH}"
+ENV PATH="/home/jovyan/.poetry/bin:${PATH}"
 
 WORKDIR /workspace
 
