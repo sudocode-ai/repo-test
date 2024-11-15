@@ -1,9 +1,0 @@
-{
-    "argv": [
-        "/bin/bash",
-        "-c",
-        "source /home/jovyan/poetry_subproject/bin/activate && exec python -m ipykernel_launcher -f {connection_file}"
-    ],
-    "display_name": "poetry_subproject python",
-    "language": "python"
-}

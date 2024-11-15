@@ -31,3 +31,12 @@ global_var = 42
     var_names = [v['name'] for v in symbols['variables']]
     assert 'global_var' in var_names
     assert 'temp' in var_names
+    
+def test_symbol_parser_base_class():
+    parser = SymbolParser()
+    assert parser.base_function() == 10
+
+def test_symbol_parser_special_class():
+    parser = SymbolParser()
+    assert parser.special_function() == 5
+    

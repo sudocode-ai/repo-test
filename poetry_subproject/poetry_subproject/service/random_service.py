@@ -42,3 +42,4 @@ def count_symbols(input_to_test: str) -> Dict[str, int]:
         'function_count': len(symbols['functions']),
         'variable_count': len(symbols['variables']),
     }
+    

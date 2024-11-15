@@ -1,8 +1,9 @@
 import importlib
+from poetry_subproject.parser.base_parser import BaseParser, SpeializedParser
 from tree_sitter import Language, Parser
 from typing import Dict, List
 
-class SymbolParser:
+class SymbolParser(BaseParser, SpeializedParser):
     def __init__(self):
         self.parser = Parser()
         
