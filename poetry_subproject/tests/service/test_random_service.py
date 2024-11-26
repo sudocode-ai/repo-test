@@ -38,7 +38,8 @@ def test_class_counter_usage(sample_code):
 def test_counter_identical_results(sample_code):
     # Test that both methods produce identical results
     direct_results = count_symbols(sample_code)
-    class_results = ClassToTest().count_symbols(sample_code)
+    class_to_test = ClassToTest()
+    class_results = class_to_test.count_symbols(sample_code)
     
     assert direct_results == class_results
 

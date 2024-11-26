@@ -1,4 +1,4 @@
-from poetry_subproject.service.alias_wildard_imports import AliasedClassToTest, count_symbols_aliased
+from poetry_subproject.service.alias_wildcard_imports import AliasedClassToTest, count_symbols_aliased
 import pytest
 
 @pytest.fixture
