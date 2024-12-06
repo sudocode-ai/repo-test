@@ -1,2 +1,2 @@
 from .core import CoreClass
-import nested_package
+import project.nested_package
