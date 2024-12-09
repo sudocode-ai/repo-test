@@ -7,3 +7,7 @@ class OtherCoreClass():
         print("Hello world")
         var = 5
         return var + 1
+    
+def inner_package_function():
+    # Do nothing
+    return 10

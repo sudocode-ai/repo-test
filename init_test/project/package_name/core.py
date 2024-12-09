@@ -7,3 +7,7 @@ class CoreClass():
         print("Hello world")
         var = 5
         return var + 1
+    
+def package_function():
+    # Do nothing
+    return 10
