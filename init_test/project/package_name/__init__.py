@@ -1,2 +1,2 @@
-from .core import CoreClass
-import project.nested_package
+from .core import CoreClass, package_function
+from project.nested_package import OtherCoreClass
