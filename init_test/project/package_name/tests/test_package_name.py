@@ -5,5 +5,5 @@ def test_unknown():
     assert result == 6
 
 def test_second_package():
-    result = some_package.nested_package.OtherCoreClass().do_something()
+    result = some_package.project.nested_package.OtherCoreClass().do_something()
     assert result == 6
