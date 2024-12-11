@@ -1,4 +1,4 @@
-from package_name import *
+from project.package_name import *
 
 def test_unknown():
     number = core.package_function()

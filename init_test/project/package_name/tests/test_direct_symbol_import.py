@@ -1,4 +1,4 @@
-from package_name.core import CoreClass, package_function
+from project.package_name.core import CoreClass, package_function
 
 def test_direct_class_call():
     number = CoreClass()
