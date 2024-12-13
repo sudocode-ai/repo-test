@@ -6,8 +6,8 @@ class DerivedExternalBaseClass(base_class.BaseClass):
         pass
         
     def get_number(self):
-        self.base_function()
-        return self.number
+        number = self.base_function()
+        return number
     
 class InternalBaseClass:
     field: str
@@ -26,7 +26,7 @@ class DerivedInternalBaseClass(InternalBaseClass):
         pass
         
     def get_number(self):
-        self.base_function()
-        return self.number
+        number = self.base_function()
+        return number
     
     
