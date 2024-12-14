@@ -1,2 +1,2 @@
 from .core import OtherCoreClass
-from base_class import BaseClass
+from project.nested_package_twice import base_class
