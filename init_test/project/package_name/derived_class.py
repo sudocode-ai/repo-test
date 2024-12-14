@@ -1,4 +1,4 @@
-from nested_package import base_class
+from project.nested_package import base_class
 
 class DerivedExternalBaseClass(base_class.BaseClass):
     def __init__(self):
