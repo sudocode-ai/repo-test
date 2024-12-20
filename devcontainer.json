@@ -1,0 +1,23 @@
+{
+    "name": "default",
+    "image": "us-west1-docker.pkg.dev/sudocode-389022/environments/gym-notebook:latest",
+    "postCreateCommand": "",
+    "remoteUser": "jovyan",
+    "customizations": {
+      "sudocode": {
+        "workspace_dir": "/home/jovyan/",
+        "sync_disk": false,
+        "setup_configs": [
+          {
+            "env_name": "poetry_suproject",
+            "env_setup_script": "bash setup.sh",
+            "activate_command": "poetry shell",
+            "setup_base_path": "poetry_subproject",
+            "test_base_path": "tests",
+            "test_runner_type": "pytest",
+            "language": "python"
+          }
+        ]
+      }
+    }
+  }
